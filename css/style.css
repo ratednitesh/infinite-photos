@@ -1,0 +1,277 @@
+/* GENERAL */
+html {
+    scroll-behavior: smooth;
+}
+
+a:hover {
+    outline: none;
+    text-decoration: none;
+}
+
+/* PRELOADER */
+#preloder {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999999;
+    background: #000;
+}
+
+.loader {
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -13px;
+    margin-left: -13px;
+    border-radius: 60px;
+    animation: loader 0.7s linear infinite;
+    -webkit-animation: loader 0.7s linear infinite;
+}
+
+
+@keyframes loader {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+        border: 8px solid #f44336;
+        border-left-color: transparent;
+    }
+
+    25% {
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+        border: 8px solid #bd2eaa;
+        border-left-color: transparent;
+    }
+
+    50% {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+        border: 8px solid #673ab7;
+        border-left-color: transparent;
+    }
+
+    75% {
+        -webkit-transform: rotate(270deg);
+        transform: rotate(270deg);
+        border: 8px solid #3ab73a;
+        border-left-color: transparent;
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+        border: 8px solid #f44336;
+        border-left-color: transparent;
+    }
+}
+
+/* BODY */
+body {
+    background-color: rgb(247, 247, 255);
+    padding-top: 105px;
+}
+
+/* HEADING */
+#heading {
+    letter-spacing: 5px;
+    font-weight: 100;
+}
+
+#heading,
+#search {
+    display: inline;
+}
+
+#search {
+    float: right;
+    height: 50px;
+    border-radius: 25px;
+    outline: none;
+
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    padding-left: 45px;
+    font-size: 26px;
+    background-color: rgb(253, 249, 249);
+    background-image: url('../img/search.png');
+    background-position: 10px 5px;
+    background-repeat: no-repeat;
+    background-size: 30px;
+
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+#search:focus {
+    width: 58%;
+}
+
+/* IMAGE GRID */
+.img-row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+
+.img-column {
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+}
+
+.img-column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    max-width: 100%;
+}
+
+.img-hover:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+/* IMAGE MODAL */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 5%;
+    top: 5%;
+    width: 90%;
+    /* Full width */
+    height: 90%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.8);
+    align-items: center;
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: auto;
+    max-width: 700px;
+    max-height: 80%;
+
+
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff8f8;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: rgb(255, 242, 242);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+h3 {
+    letter-spacing: 3px;
+    font-weight: 100;
+    margin-bottom: 25px !important;
+}
+
+#the-end {
+    display: none;
+}
+
+footer {
+    letter-spacing: 3px;
+    font-weight: 100;
+}
+
+#load-more {
+    cursor: pointer;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+    .img-column {
+        flex: 50%;
+        max-width: 50%;
+    }
+
+
+    #search:focus {
+        width: 48%;
+    }
+
+}
+
+
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .img-column {
+        flex: 100%;
+        max-width: 100%;
+    }
+
+    #heading {
+        font-size: 95%;
+
+    }
+
+    body {
+        padding-top: 75px;
+    }
+
+    .modal-content {
+        width: 100%;
+    }
+
+    .img-hover:hover {
+        opacity: 1;
+        cursor: pointer;
+    }
+
+    #heading {
+        letter-spacing: 2px;
+
+    }
+
+    #search {
+        float: right;
+        height: 30px;
+        border-radius: 25px;
+        outline: none;
+
+        width: 57px;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        padding-left: 35px;
+        font-size: 18px;
+        /* background-color: rgb(253, 249, 249); */
+        background-image: url('../img/search.png');
+        background-position: 2px 3px;
+        background-repeat: no-repeat;
+        background-size: 21px;
+    }
+
+
+    #search:focus {
+        width: 48%;
+    }
+
+}
